@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CollegeDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ATTENDANCE">
+    <Key>
+      <PropertyRef Name="attendance_id" />
+    </Key>
+    <Property Name="attendance_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="attendance_type" Type="Int32" Nullable="false" />
+    <Property Name="student_id" Type="Int32" Nullable="false" />
+    <Property Name="teacher_id" Type="Int32" Nullable="false" />
+    <Property Name="attendance_date" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mark" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="STUDENT" Relationship="Self.FK__ATTENDANC__stude__59063A47" FromRole="ATTENDANCE" ToRole="STUDENTS" />
+    <NavigationProperty Name="TEACHER" Relationship="Self.FK__ATTENDANC__teach__59FA5E80" FromRole="ATTENDANCE" ToRole="TEACHERS" />
+  </EntityType>
+  <EntityType Name="BOOK_ISSUES">
+    <Key>
+      <PropertyRef Name="book_issue_id" />
+    </Key>
+    <Property Name="book_issue_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="book_id" Type="Int32" Nullable="false" />
+    <Property Name="std_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BOOK" Relationship="Self.FK__BOOK_ISSU__book___6383C8BA" FromRole="BOOK_ISSUES" ToRole="BOOKS" />
+    <NavigationProperty Name="STUDENT" Relationship="Self.FK__BOOK_ISSU__std_i__6477ECF3" FromRole="BOOK_ISSUES" ToRole="STUDENTS" />
+  </EntityType>
+  <EntityType Name="BOOK">
+    <Key>
+      <PropertyRef Name="book_id" />
+    </Key>
+    <Property Name="book_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="author_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="publisher_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="p_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="book_copies" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BOOK_ISSUES" Relationship="Self.FK__BOOK_ISSU__book___6383C8BA" FromRole="BOOKS" ToRole="BOOK_ISSUES" />
+  </EntityType>
+  <EntityType Name="CLASS">
+    <Key>
+      <PropertyRef Name="class_id" />
+    </Key>
+    <Property Name="class_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="class_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numeric_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MARKSHEETs" Relationship="Self.FK__MARKSHEET__class__5CD6CB2B" FromRole="CLASSES" ToRole="MARKSHEET" />
+    <NavigationProperty Name="SECTIONS" Relationship="Self.FK__SECTIONS__class___403A8C7D" FromRole="CLASSES" ToRole="SECTIONS" />
+    <NavigationProperty Name="SUBJECTS" Relationship="Self.FK__SUBJECTS__class___49C3F6B7" FromRole="CLASSES" ToRole="SUBJECTS" />
+  </EntityType>
+  <EntityType Name="CONCESSION">
+    <Key>
+      <PropertyRef Name="con_id" />
+    </Key>
+    <Property Name="con_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="total_fee" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="con_fee" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="paid_amount" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="payment_date" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="std_id" Type="Int32" Nullable="false" />
+    <Property Name="payment_name_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PAYMENTS_NAME" Relationship="Self.FK__CONCESSIO__payme__5629CD9C" FromRole="CONCESSIONS" ToRole="PAYMENTS_NAME" />
+    <NavigationProperty Name="STUDENT" Relationship="Self.FK__CONCESSIO__std_i__5535A963" FromRole="CONCESSIONS" ToRole="STUDENTS" />
+  </EntityType>
+  <EntityType Name="EXPENS">
+    <Key>
+      <PropertyRef Name="expenses_id" />
+    </Key>
+    <Property Name="expenses_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="expenses_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="expenses_amount" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="expenses_name_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EXPENSES_NAME1" Relationship="Self.FK__EXPENSES__expens__398D8EEE" FromRole="EXPENSES" ToRole="EXPENSES_NAME" />
+  </EntityType>
+  <EntityType Name="EXPENSES_NAME">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="e_date" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="e_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="total_amount" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="EXPENSES" Relationship="Self.FK__EXPENSES__expens__398D8EEE" FromRole="EXPENSES_NAME" ToRole="EXPENSES" />
+  </EntityType>
+  <EntityType Name="MARKSHEET">
+    <Key>
+      <PropertyRef Name="marksheet_id" />
+    </Key>
+    <Property Name="marksheet_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="marksheet_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="marksheet_date" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="class_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CLASS" Relationship="Self.FK__MARKSHEET__class__5CD6CB2B" FromRole="MARKSHEET" ToRole="CLASSES" />
+  </EntityType>
+  <EntityType Name="PACKAGE">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="class_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="year" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fee" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="total_fee" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PARENT">
+    <Key>
+      <PropertyRef Name="parent_id" />
+    </Key>
+    <Property Name="parent_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="father_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mother_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="father_occupation" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mother_occupation" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nationality" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="present_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="permanent_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="picture" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="STUDENTS" Relationship="Self.FK__STUDENTS__p_id__45F365D3" FromRole="PARENTS" ToRole="STUDENTS" />
+  </EntityType>
+  <EntityType Name="PAYMENT">
+    <Key>
+      <PropertyRef Name="payment_id" />
+    </Key>
+    <Property Name="payment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="paid_amount" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="payment_date" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="std_id" Type="Int32" Nullable="false" />
+    <Property Name="payment_name_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PAYMENTS_NAME" Relationship="Self.FK__PAYMENTS__paymen__5070F446" FromRole="PAYMENTS" ToRole="PAYMENTS_NAME" />
+    <NavigationProperty Name="STUDENT" Relationship="Self.FK__PAYMENTS__std_id__4F7CD00D" FromRole="PAYMENTS" ToRole="STUDENTS" />
+  </EntityType>
+  <EntityType Name="PAYMENTS_NAME">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="start_date" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="end_date" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="total_amount" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CONCESSIONS" Relationship="Self.FK__CONCESSIO__payme__5629CD9C" FromRole="PAYMENTS_NAME" ToRole="CONCESSIONS" />
+    <NavigationProperty Name="PAYMENTS" Relationship="Self.FK__PAYMENTS__paymen__5070F446" FromRole="PAYMENTS_NAME" ToRole="PAYMENTS" />
+  </EntityType>
+  <EntityType Name="SECTION">
+    <Key>
+      <PropertyRef Name="section_id" />
+    </Key>
+    <Property Name="section_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="section_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="class_id" Type="Int32" Nullable="false" />
+    <Property Name="teacher_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CLASS" Relationship="Self.FK__SECTIONS__class___403A8C7D" FromRole="SECTIONS" ToRole="CLASSES" />
+    <NavigationProperty Name="TEACHER" Relationship="Self.FK__SECTIONS__teache__412EB0B6" FromRole="SECTIONS" ToRole="TEACHERS" />
+    <NavigationProperty Name="STUDENTS" Relationship="Self.FK__STUDENTS__sectio__46E78A0C" FromRole="SECTIONS" ToRole="STUDENTS" />
+  </EntityType>
+  <EntityType Name="STUDENT">
+    <Key>
+      <PropertyRef Name="std_id" />
+    </Key>
+    <Property Name="std_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="date_of_birth" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="roll" Type="Int32" Nullable="false" />
+    <Property Name="religion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="picture" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="p_id" Type="Int32" Nullable="false" />
+    <Property Name="section_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ATTENDANCEs" Relationship="Self.FK__ATTENDANC__stude__59063A47" FromRole="STUDENTS" ToRole="ATTENDANCE" />
+    <NavigationProperty Name="BOOK_ISSUES" Relationship="Self.FK__BOOK_ISSU__std_i__6477ECF3" FromRole="STUDENTS" ToRole="BOOK_ISSUES" />
+    <NavigationProperty Name="CONCESSIONS" Relationship="Self.FK__CONCESSIO__std_i__5535A963" FromRole="STUDENTS" ToRole="CONCESSIONS" />
+    <NavigationProperty Name="PARENT" Relationship="Self.FK__STUDENTS__p_id__45F365D3" FromRole="STUDENTS" ToRole="PARENTS" />
+    <NavigationProperty Name="PAYMENTS" Relationship="Self.FK__PAYMENTS__std_id__4F7CD00D" FromRole="STUDENTS" ToRole="PAYMENTS" />
+    <NavigationProperty Name="SECTION" Relationship="Self.FK__STUDENTS__sectio__46E78A0C" FromRole="STUDENTS" ToRole="SECTIONS" />
+  </EntityType>
+  <EntityType Name="SUBJECT">
+    <Key>
+      <PropertyRef Name="sub_id" />
+    </Key>
+    <Property Name="sub_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sub_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="total_mark" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="class_id" Type="Int32" Nullable="false" />
+    <Property Name="teacher_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CLASS" Relationship="Self.FK__SUBJECTS__class___49C3F6B7" FromRole="SUBJECTS" ToRole="CLASSES" />
+    <NavigationProperty Name="TEACHER" Relationship="Self.FK__SUBJECTS__teache__4AB81AF0" FromRole="SUBJECTS" ToRole="TEACHERS" />
+  </EntityType>
+  <EntityType Name="TEACHER">
+    <Key>
+      <PropertyRef Name="teacher_id" />
+    </Key>
+    <Property Name="teacher_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="date_of_birth" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cnic" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="religion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="teacher_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="picture" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ATTENDANCEs" Relationship="Self.FK__ATTENDANC__teach__59FA5E80" FromRole="TEACHERS" ToRole="ATTENDANCE" />
+    <NavigationProperty Name="SECTIONS" Relationship="Self.FK__SECTIONS__teache__412EB0B6" FromRole="TEACHERS" ToRole="SECTIONS" />
+    <NavigationProperty Name="SUBJECTS" Relationship="Self.FK__SUBJECTS__teache__4AB81AF0" FromRole="TEACHERS" ToRole="SUBJECTS" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__ATTENDANC__stude__59063A47">
+    <End Role="STUDENTS" Type="Self.STUDENT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ATTENDANCE" Type="Self.ATTENDANCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STUDENTS">
+        <PropertyRef Name="std_id" />
+      </Principal>
+      <Dependent Role="ATTENDANCE">
+        <PropertyRef Name="student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ATTENDANC__teach__59FA5E80">
+    <End Role="TEACHERS" Type="Self.TEACHER" Multiplicity="1" />
+    <End Role="ATTENDANCE" Type="Self.ATTENDANCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEACHERS">
+        <PropertyRef Name="teacher_id" />
+      </Principal>
+      <Dependent Role="ATTENDANCE">
+        <PropertyRef Name="teacher_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BOOK_ISSU__book___6383C8BA">
+    <End Role="BOOKS" Type="Self.BOOK" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BOOK_ISSUES" Type="Self.BOOK_ISSUES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BOOKS">
+        <PropertyRef Name="book_id" />
+      </Principal>
+      <Dependent Role="BOOK_ISSUES">
+        <PropertyRef Name="book_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BOOK_ISSU__std_i__6477ECF3">
+    <End Role="STUDENTS" Type="Self.STUDENT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BOOK_ISSUES" Type="Self.BOOK_ISSUES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STUDENTS">
+        <PropertyRef Name="std_id" />
+      </Principal>
+      <Dependent Role="BOOK_ISSUES">
+        <PropertyRef Name="std_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MARKSHEET__class__5CD6CB2B">
+    <End Role="CLASSES" Type="Self.CLASS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MARKSHEET" Type="Self.MARKSHEET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLASSES">
+        <PropertyRef Name="class_id" />
+      </Principal>
+      <Dependent Role="MARKSHEET">
+        <PropertyRef Name="class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SECTIONS__class___403A8C7D">
+    <End Role="CLASSES" Type="Self.CLASS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SECTIONS" Type="Self.SECTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLASSES">
+        <PropertyRef Name="class_id" />
+      </Principal>
+      <Dependent Role="SECTIONS">
+        <PropertyRef Name="class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SUBJECTS__class___49C3F6B7">
+    <End Role="CLASSES" Type="Self.CLASS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SUBJECTS" Type="Self.SUBJECT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLASSES">
+        <PropertyRef Name="class_id" />
+      </Principal>
+      <Dependent Role="SUBJECTS">
+        <PropertyRef Name="class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CONCESSIO__payme__5629CD9C">
+    <End Role="PAYMENTS_NAME" Type="Self.PAYMENTS_NAME" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CONCESSIONS" Type="Self.CONCESSION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENTS_NAME">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CONCESSIONS">
+        <PropertyRef Name="payment_name_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CONCESSIO__std_i__5535A963">
+    <End Role="STUDENTS" Type="Self.STUDENT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CONCESSIONS" Type="Self.CONCESSION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STUDENTS">
+        <PropertyRef Name="std_id" />
+      </Principal>
+      <Dependent Role="CONCESSIONS">
+        <PropertyRef Name="std_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EXPENSES__expens__398D8EEE">
+    <End Role="EXPENSES_NAME" Type="Self.EXPENSES_NAME" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EXPENSES" Type="Self.EXPENS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EXPENSES_NAME">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="EXPENSES">
+        <PropertyRef Name="expenses_name_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__STUDENTS__p_id__45F365D3">
+    <End Role="PARENTS" Type="Self.PARENT" Multiplicity="1" />
+    <End Role="STUDENTS" Type="Self.STUDENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PARENTS">
+        <PropertyRef Name="parent_id" />
+      </Principal>
+      <Dependent Role="STUDENTS">
+        <PropertyRef Name="p_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PAYMENTS__paymen__5070F446">
+    <End Role="PAYMENTS_NAME" Type="Self.PAYMENTS_NAME" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PAYMENTS" Type="Self.PAYMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENTS_NAME">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PAYMENTS">
+        <PropertyRef Name="payment_name_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PAYMENTS__std_id__4F7CD00D">
+    <End Role="STUDENTS" Type="Self.STUDENT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PAYMENTS" Type="Self.PAYMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STUDENTS">
+        <PropertyRef Name="std_id" />
+      </Principal>
+      <Dependent Role="PAYMENTS">
+        <PropertyRef Name="std_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SECTIONS__teache__412EB0B6">
+    <End Role="TEACHERS" Type="Self.TEACHER" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SECTIONS" Type="Self.SECTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEACHERS">
+        <PropertyRef Name="teacher_id" />
+      </Principal>
+      <Dependent Role="SECTIONS">
+        <PropertyRef Name="teacher_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__STUDENTS__sectio__46E78A0C">
+    <End Role="SECTIONS" Type="Self.SECTION" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="STUDENTS" Type="Self.STUDENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SECTIONS">
+        <PropertyRef Name="section_id" />
+      </Principal>
+      <Dependent Role="STUDENTS">
+        <PropertyRef Name="section_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SUBJECTS__teache__4AB81AF0">
+    <End Role="TEACHERS" Type="Self.TEACHER" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SUBJECTS" Type="Self.SUBJECT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TEACHERS">
+        <PropertyRef Name="teacher_id" />
+      </Principal>
+      <Dependent Role="SUBJECTS">
+        <PropertyRef Name="teacher_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CollegeDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ATTENDANCEs" EntityType="Self.ATTENDANCE" />
+    <EntitySet Name="BOOK_ISSUES" EntityType="Self.BOOK_ISSUES" />
+    <EntitySet Name="BOOKS" EntityType="Self.BOOK" />
+    <EntitySet Name="CLASSES" EntityType="Self.CLASS" />
+    <EntitySet Name="CONCESSIONS" EntityType="Self.CONCESSION" />
+    <EntitySet Name="EXPENSES" EntityType="Self.EXPENS" />
+    <EntitySet Name="EXPENSES_NAME" EntityType="Self.EXPENSES_NAME" />
+    <EntitySet Name="MARKSHEETs" EntityType="Self.MARKSHEET" />
+    <EntitySet Name="PACKAGES" EntityType="Self.PACKAGE" />
+    <EntitySet Name="PARENTS" EntityType="Self.PARENT" />
+    <EntitySet Name="PAYMENTS" EntityType="Self.PAYMENT" />
+    <EntitySet Name="PAYMENTS_NAME" EntityType="Self.PAYMENTS_NAME" />
+    <EntitySet Name="SECTIONS" EntityType="Self.SECTION" />
+    <EntitySet Name="STUDENTS" EntityType="Self.STUDENT" />
+    <EntitySet Name="SUBJECTS" EntityType="Self.SUBJECT" />
+    <EntitySet Name="TEACHERS" EntityType="Self.TEACHER" />
+    <EntitySet Name="USERS" EntityType="Self.USER" />
+    <AssociationSet Name="FK__ATTENDANC__stude__59063A47" Association="Self.FK__ATTENDANC__stude__59063A47">
+      <End Role="STUDENTS" EntitySet="STUDENTS" />
+      <End Role="ATTENDANCE" EntitySet="ATTENDANCEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ATTENDANC__teach__59FA5E80" Association="Self.FK__ATTENDANC__teach__59FA5E80">
+      <End Role="TEACHERS" EntitySet="TEACHERS" />
+      <End Role="ATTENDANCE" EntitySet="ATTENDANCEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BOOK_ISSU__book___6383C8BA" Association="Self.FK__BOOK_ISSU__book___6383C8BA">
+      <End Role="BOOKS" EntitySet="BOOKS" />
+      <End Role="BOOK_ISSUES" EntitySet="BOOK_ISSUES" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BOOK_ISSU__std_i__6477ECF3" Association="Self.FK__BOOK_ISSU__std_i__6477ECF3">
+      <End Role="STUDENTS" EntitySet="STUDENTS" />
+      <End Role="BOOK_ISSUES" EntitySet="BOOK_ISSUES" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MARKSHEET__class__5CD6CB2B" Association="Self.FK__MARKSHEET__class__5CD6CB2B">
+      <End Role="CLASSES" EntitySet="CLASSES" />
+      <End Role="MARKSHEET" EntitySet="MARKSHEETs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SECTIONS__class___403A8C7D" Association="Self.FK__SECTIONS__class___403A8C7D">
+      <End Role="CLASSES" EntitySet="CLASSES" />
+      <End Role="SECTIONS" EntitySet="SECTIONS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SUBJECTS__class___49C3F6B7" Association="Self.FK__SUBJECTS__class___49C3F6B7">
+      <End Role="CLASSES" EntitySet="CLASSES" />
+      <End Role="SUBJECTS" EntitySet="SUBJECTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CONCESSIO__payme__5629CD9C" Association="Self.FK__CONCESSIO__payme__5629CD9C">
+      <End Role="PAYMENTS_NAME" EntitySet="PAYMENTS_NAME" />
+      <End Role="CONCESSIONS" EntitySet="CONCESSIONS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CONCESSIO__std_i__5535A963" Association="Self.FK__CONCESSIO__std_i__5535A963">
+      <End Role="STUDENTS" EntitySet="STUDENTS" />
+      <End Role="CONCESSIONS" EntitySet="CONCESSIONS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EXPENSES__expens__398D8EEE" Association="Self.FK__EXPENSES__expens__398D8EEE">
+      <End Role="EXPENSES_NAME" EntitySet="EXPENSES_NAME" />
+      <End Role="EXPENSES" EntitySet="EXPENSES" />
+    </AssociationSet>
+    <AssociationSet Name="FK__STUDENTS__p_id__45F365D3" Association="Self.FK__STUDENTS__p_id__45F365D3">
+      <End Role="PARENTS" EntitySet="PARENTS" />
+      <End Role="STUDENTS" EntitySet="STUDENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PAYMENTS__paymen__5070F446" Association="Self.FK__PAYMENTS__paymen__5070F446">
+      <End Role="PAYMENTS_NAME" EntitySet="PAYMENTS_NAME" />
+      <End Role="PAYMENTS" EntitySet="PAYMENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PAYMENTS__std_id__4F7CD00D" Association="Self.FK__PAYMENTS__std_id__4F7CD00D">
+      <End Role="STUDENTS" EntitySet="STUDENTS" />
+      <End Role="PAYMENTS" EntitySet="PAYMENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SECTIONS__teache__412EB0B6" Association="Self.FK__SECTIONS__teache__412EB0B6">
+      <End Role="TEACHERS" EntitySet="TEACHERS" />
+      <End Role="SECTIONS" EntitySet="SECTIONS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__STUDENTS__sectio__46E78A0C" Association="Self.FK__STUDENTS__sectio__46E78A0C">
+      <End Role="SECTIONS" EntitySet="SECTIONS" />
+      <End Role="STUDENTS" EntitySet="STUDENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SUBJECTS__teache__4AB81AF0" Association="Self.FK__SUBJECTS__teache__4AB81AF0">
+      <End Role="TEACHERS" EntitySet="TEACHERS" />
+      <End Role="SUBJECTS" EntitySet="SUBJECTS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

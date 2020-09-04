@@ -1,0 +1,185 @@
+﻿<UserControl x:Class="CollegeSystem.Hostel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CollegeSystem"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+             d:DesignHeight="610" d:DesignWidth="1050">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- primary color -->
+                <ResourceDictionary>
+                    <!-- include your primary palette -->
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/MaterialDesignColor.Indigo.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                    <!--
+                            include three hues from the primary palette (and the associated forecolours).
+                            Do not rename, keep in sequence; light to dark.
+                        -->
+                    <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="{StaticResource Primary100}"/>
+                    <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="{StaticResource Primary100Foreground}"/>
+                    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="{StaticResource Primary500}"/>
+                    <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="{StaticResource Primary500Foreground}"/>
+                    <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="{StaticResource Primary700}"/>
+                    <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="{StaticResource Primary700Foreground}"/>
+                </ResourceDictionary>
+
+                <!-- secondary colour -->
+                <ResourceDictionary>
+                    <!-- include your secondary pallette -->
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/MaterialDesignColor.Yellow.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+
+                    <!-- include a single secondary accent color (and the associated forecolour) -->
+                    <SolidColorBrush x:Key="SecondaryAccentBrush" Color="{StaticResource Accent200}"/>
+                    <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="{StaticResource Accent200Foreground}"/>
+                </ResourceDictionary>
+
+                <!-- Include the Dragablz Material Design style -->
+                <ResourceDictionary Source="pack://application:,,,/Dragablz;component/Themes/materialdesign.xaml"/>
+
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Purple.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- tell Dragablz tab control to use the Material Design theme -->
+            <Style TargetType="{x:Type dragablz:TabablzControl}" BasedOn="{StaticResource MaterialDesignTabablzControlStyle}" />
+
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
+    <Grid HorizontalAlignment="Left" Height="610" Margin="0,0,0,0" VerticalAlignment="Top" Width="1050" Background="#F0F1F3">
+        <dragablz:TabablzControl >
+            <dragablz:TabablzControl.InterTabController>
+                <dragablz:InterTabController />
+            </dragablz:TabablzControl.InterTabController>
+            <TabItem Header="ADD NEW ROOM">
+                <Grid HorizontalAlignment="Left" Height="540" Margin="20,20,0,0" VerticalAlignment="Top" Width="1010" Background="#F0F1F3">
+
+                    <Grid HorizontalAlignment="Left" Height="480" Margin="20,40,0,0" VerticalAlignment="Top" Width="300" Background="#FFFFFF">
+
+                        <Label Content="Add New Room" FontSize="17" Background="#042954" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="140" Height="35" />
+                        <TextBox Name="txtHostelId" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Hostel Id" FontSize="14"  Background="#F0F1F3" Height="30" Margin="40,70,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                        </TextBox>
+                        <TextBox Name="txtRoomNo" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Room Number" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                        </TextBox>
+                        <TextBox Name="txtRoomType" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Room Type" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,210,0,0"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                        </TextBox>
+                        <TextBox Name="txtNoOfBed" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Number Of Bed" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,280,0,0"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                        </TextBox>
+                        <TextBox Name="txtCost" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Cost Per Bed" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,350,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                        </TextBox>
+                        <Label Name="lbladdroom"  HorizontalAlignment="Left" Margin="140,390,0,0" VerticalAlignment="Top" Height="31" Width="120"/>
+                        <Button Name="btnHtlSubmit" Content="Submit" BorderThickness="0.5" HorizontalAlignment="Left" Margin="40,420,0,0"   VerticalAlignment="Top" Width="100" Background="#F8C504" Height="30" Foreground="#FFFFFF" Click="btnHtlSubmit_Click">
+
+                        </Button>
+                        <Button Name="btnHtlReset" Content="Reset" BorderThickness="0.5" HorizontalAlignment="Left" Margin="180,420,0,0"   VerticalAlignment="Top" Width="100" Background="#042954" Height="30" Foreground="#FFFFFF" Click="btnHtlReset_Click">
+
+                        </Button>
+
+                    </Grid>
+
+                    <Grid HorizontalAlignment="Left" Height="480" Margin="340,40,0,0" VerticalAlignment="Top" Width="650" Background="#FFFFFF">
+                        <Label Content="List All Room" FontSize="17" Background="#042954" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" Width="140" Height="35" />
+
+                        <DataGrid  AutoGenerateColumns="True" Height="400" HorizontalAlignment="Left" Margin="0,80,0,0" Name="tableAllRoom" VerticalAlignment="Top" Width="650" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+
+            <TabItem Header="SEAT ALLOTED">
+                <Grid HorizontalAlignment="Left" Height="540" Margin="20,20,0,0" VerticalAlignment="Top" Width="1010" Background="#F0F1F3">
+
+                    <Grid HorizontalAlignment="Left" Height="420" Margin="20,40,0,0" VerticalAlignment="Top" Width="300" Background="#FFFFFF">
+
+                        <Label Content="Seat Allot" FontSize="17" Background="#042954" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Height="35" />
+                        <TextBox Name="txtAltHostelId" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Hostel Id" FontSize="14"  Background="#F0F1F3" Height="30" Margin="40,70,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                        </TextBox>
+                        <TextBox Name="txtAltRoomNo" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Room Number" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                        </TextBox>
+                        <TextBox Name="txtAltSeatNo" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Seat Number" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,210,0,0"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                        </TextBox>
+                        <TextBox Name="txtAltStdId" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Student Admition#" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,280,0,0"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                        </TextBox>
+                        <Label Name="lblseatallot"  HorizontalAlignment="Left" Margin="140,330,0,0" VerticalAlignment="Top" Height="31" Width="120"/>
+
+                        <Button Name="btnAltSubmit" Content="Submit" BorderThickness="0.5" HorizontalAlignment="Left" Margin="40,360,0,0"   VerticalAlignment="Top" Width="100" Background="#F8C504" Height="30" Foreground="#FFFFFF" Click="btnAltSubmit_Click">
+
+                        </Button>
+                        <Button Name="btnAltReset" Content="Reset" BorderThickness="0.5" HorizontalAlignment="Left" Margin="180,360,0,0"   VerticalAlignment="Top" Width="100" Background="#042954" Height="30" Foreground="#FFFFFF" Click="btnAltReset_Click">
+
+                        </Button>
+
+                    </Grid>
+
+                    <Grid HorizontalAlignment="Left" Height="480" Margin="340,40,0,0" VerticalAlignment="Top" Width="650" Background="#FFFFFF">
+                        <Label Content="List All Allocated Seat" FontSize="17" Background="#042954" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" Width="180" Height="35" />
+
+                        <DataGrid AutoGenerateColumns="True" Height="400" HorizontalAlignment="Left" Margin="0,80,0,0" Name="tableAlocatedSeat" VerticalAlignment="Top" Width="650" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="VACANT SEAT">
+                <Grid HorizontalAlignment="Left" Height="540" Margin="20,20,0,0" VerticalAlignment="Top" Width="1010" Background="#F0F1F3">
+
+                    <Grid HorizontalAlignment="Left" Height="420" Margin="20,40,0,0" VerticalAlignment="Top" Width="300" Background="#FFFFFF">
+
+                        <Label Content="Seat Vacant" FontSize="17" Background="#042954" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Height="35" />
+                        <TextBox Name="txtVctHostelId" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Hostel Id" FontSize="14"  Background="#F0F1F3" Height="30" Margin="40,70,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                        </TextBox>
+                        <TextBox Name="txtVctRoomNo" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Room Number" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                        </TextBox>
+                        <TextBox Name="txtVctSeatNo" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Seat Number" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,210,0,0"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                        </TextBox>
+                        <TextBox Name="txtVctStdId" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Student Admition#" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,280,0,0"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                        </TextBox>
+
+                        <Label Name="lblvacantseat"  HorizontalAlignment="Left" Margin="140,330,0,0" VerticalAlignment="Top" Height="31" Width="120"/>
+
+                        <Button Name="btnVctSubmit" Content="Submit" BorderThickness="0.5" HorizontalAlignment="Left" Margin="40,360,0,0"   VerticalAlignment="Top" Width="100" Background="#F8C504" Height="30" Foreground="#FFFFFF" Click="btnVctSubmit_Click">
+
+                        </Button>
+                        <Button Name="btnVctReset" Content="Reset" BorderThickness="0.5" HorizontalAlignment="Left" Margin="180,360,0,0"   VerticalAlignment="Top" Width="100" Background="#042954" Height="30" Foreground="#FFFFFF" Click="btnVctReset_Click">
+
+                        </Button>
+
+                    </Grid>
+
+                    <Grid HorizontalAlignment="Left" Height="480" Margin="340,40,0,0" VerticalAlignment="Top" Width="650" Background="#FFFFFF">
+                        <Label Content="List All Vacant Seat" FontSize="17" Background="#042954" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" Width="180" Height="35" />
+
+                        <DataGrid AutoGenerateColumns="True" Height="400" HorizontalAlignment="Left" Margin="0,80,0,0" Name="tableVctSeat" VerticalAlignment="Top" Width="650" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </dragablz:TabablzControl>
+
+    </Grid>
+
+</UserControl>

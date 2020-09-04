@@ -1,0 +1,164 @@
+﻿<UserControl x:Class="CollegeSystem.Library"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CollegeSystem"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+             d:DesignHeight="610" d:DesignWidth="1050">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- primary color -->
+                <ResourceDictionary>
+                    <!-- include your primary palette -->
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/MaterialDesignColor.Indigo.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                    <!--
+                            include three hues from the primary palette (and the associated forecolours).
+                            Do not rename, keep in sequence; light to dark.
+                        -->
+                    <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="{StaticResource Primary100}"/>
+                    <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="{StaticResource Primary100Foreground}"/>
+                    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="{StaticResource Primary500}"/>
+                    <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="{StaticResource Primary500Foreground}"/>
+                    <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="{StaticResource Primary700}"/>
+                    <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="{StaticResource Primary700Foreground}"/>
+                </ResourceDictionary>
+
+                <!-- secondary colour -->
+                <ResourceDictionary>
+                    <!-- include your secondary pallette -->
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/MaterialDesignColor.Yellow.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+
+                    <!-- include a single secondary accent color (and the associated forecolour) -->
+                    <SolidColorBrush x:Key="SecondaryAccentBrush" Color="{StaticResource Accent200}"/>
+                    <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="{StaticResource Accent200Foreground}"/>
+                </ResourceDictionary>
+
+                <!-- Include the Dragablz Material Design style -->
+                <ResourceDictionary Source="pack://application:,,,/Dragablz;component/Themes/materialdesign.xaml"/>
+
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Purple.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- tell Dragablz tab control to use the Material Design theme -->
+            <Style TargetType="{x:Type dragablz:TabablzControl}" BasedOn="{StaticResource MaterialDesignTabablzControlStyle}" />
+
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid HorizontalAlignment="Left" Height="610" Margin="0,0,0,0" VerticalAlignment="Top" Width="1050" Background="#F0F1F3">
+
+        <dragablz:TabablzControl>
+            <dragablz:TabablzControl.InterTabController>
+                <dragablz:InterTabController />
+            </dragablz:TabablzControl.InterTabController>
+            <TabItem Header="ISSUE BOOK">
+                <Grid HorizontalAlignment="Left" Height="350" Margin="350,150,0,0" VerticalAlignment="Top" Width="300" Background="#FFFFFF">
+                    <Label Content="Issue Book" FontSize="17" Background="#042954" Foreground="#FFFFFF" HorizontalAlignment="left" Margin="90,10,0,0" VerticalAlignment="Top" Width="100" Height="40" />
+
+                    <TextBox Name="txtIssueBookId" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="  Book Id" FontSize="14"  Background="#F0F1F3" Height="30" Margin="40,70,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" BorderThickness="0,0,0,0">
+
+                    </TextBox>
+                    <TextBox Name="txtIssueStdId" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="  Admition#" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" BorderThickness="0,0,0,0">
+
+                    </TextBox>
+                    <TextBox Name="txtIssueDate" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="  Issue Date" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,210,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" BorderThickness="0,0,0,0">
+
+                    </TextBox>
+                    <Label Name="lblIssueMsg"  HorizontalAlignment="Left" Margin="140,250,0,0" VerticalAlignment="Top" Height="31" Width="120"/>
+                    <Button Name="btnIssueBook" Content="Issue Book" BorderThickness="0.5" HorizontalAlignment="Left" Margin="100,280,0,0" VerticalAlignment="Top" Width="100" Background="#F8C504" Height="30" Foreground="#FFFFFF" Click="btnIssueBook_Click">
+
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="RETURN BOOK">
+                <Grid HorizontalAlignment="Left" Height="350" Margin="350,150,0,0" VerticalAlignment="Top" Width="300" Background="#FFFFFF">
+                    <Label Content="Return Book" FontSize="17" Background="#042954" Foreground="#FFFFFF" HorizontalAlignment="left" Margin="90,10,0,0" VerticalAlignment="Top" Width="120" Height="40" />
+
+                    <TextBox Name="txtRtnIssueId" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="  Issue Id" FontSize="14"  Background="#F0F1F3" Height="30" Margin="40,80,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" BorderThickness="0,0,0,0">
+
+                    </TextBox>
+                    
+                    <TextBox Name="txtRtnDate" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="  Return Date" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,160,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" BorderThickness="0,0,0,0">
+
+                    </TextBox>
+                    <Label Name="lblRtnMsg"  HorizontalAlignment="Left" Margin="140,200,0,0" VerticalAlignment="Top" Height="31" Width="120"/>
+
+                    <Button Name="btnReturnBook" Content="Return Book" BorderThickness="0.5" HorizontalAlignment="Left" Margin="90,240,0,0" VerticalAlignment="Top" Width="120" Background="#F8C504" Height="30" Foreground="#FFFFFF" Click="btnReturnBook_Click">
+
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="ADD BOOK">
+                <Grid HorizontalAlignment="Left" Height="300" Margin="20,20,0,0" VerticalAlignment="Top" Width="1010" Background="#FFFFFF">
+                    <Label Content="Add Book" FontSize="17" Background="#042954" Foreground="#FFFFFF" HorizontalAlignment="left" Margin="20,10,0,0" VerticalAlignment="Top" Width="100" Height="40" />
+                    <TextBox Name="txtBookName" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="  Book Name" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="20,80,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" BorderThickness="0,0,0,0">
+
+                    </TextBox>
+                    <TextBox Name="txtPublisher" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="  Publisher Name" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="270,80,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" BorderThickness="0,0,0,0">
+
+                    </TextBox>
+                    <TextBox Name="txtWriter" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="  Writer Name" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="520,80,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" BorderThickness="0,0,0,0">
+
+                    </TextBox>
+                    <TextBox Name="txtPhone" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="  Phone Number" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="780,80,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" BorderThickness="0,0,0,0">
+
+                    </TextBox>
+                    <TextBox Name="txtNoOfCopies" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="  Number of Copies" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="20,160,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" BorderThickness="0,0,0,0">
+
+                    </TextBox>
+                    <TextBox Name="txtPubAddress" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="  Publisher Address" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="270,160,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" BorderThickness="0,0,0,0">
+
+                    </TextBox>
+                    <TextBox Name="txtIdNo" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="  ID No" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="520,160,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" BorderThickness="0,0,0,0">
+
+                    </TextBox>
+                    <Button Name="btnStdSave" Content="Save" BorderThickness="0.5" HorizontalAlignment="Left" Margin="10,240,0,0"   VerticalAlignment="Top" Width="100" Background="#F8C504" Height="30" Foreground="#FFFFFF" Click="btnStdSave_Click">
+
+                    </Button>
+                    <Button Name="btnStdReset" Content="Reset" BorderThickness="0.5" HorizontalAlignment="Left" Margin="130,240,0,0" VerticalAlignment="Top" Width="100" Background="#042954" Height="30" Foreground="#FFFFFF" Click="btnStdReset_Click">
+
+                    </Button>
+                    <Label Name="lblAddMsg" HorizontalAlignment="Left" Margin="270,240,0,0" Foreground="red" VerticalAlignment="Top"/>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="DELETE BOOK">
+                <Grid HorizontalAlignment="Left" Height="300" Margin="350,100,0,0" VerticalAlignment="Top" Width="300" Background="#FFFFFF">
+                    <Label Content="Delete Book" FontSize="17" Background="#042954" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="110" Height="40" />
+
+                    <TextBox Name="txtDltBookId" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="  Book ID No" FontSize="14"  Background="#F0F1F3" Height="30" Margin="50,100,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" BorderThickness="0,0,0,0">
+
+                    </TextBox>
+                    <Button Name="btnDelete" Content="Delete Book" Background="#F8C504" Height="30" Foreground="#FFFFFF" BorderThickness="0.5" HorizontalAlignment="Left" Margin="90,210,0,0" VerticalAlignment="Top" Width="130" Click="btnDelete_Click">
+
+                    </Button>
+                    <Label Name="lblDltMsg" HorizontalAlignment="Left" Margin="90,260,0,0" Foreground="red" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="ALL BOOK">
+                <Grid HorizontalAlignment="Left" Height="540" Margin="20,20,0,0" VerticalAlignment="Top" Width="1010" Background="#FFFFFF">
+
+
+                    <Label Content="All Book" FontSize="17" Background="#042954" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" Width="100" Height="40" />
+
+                    <DataGrid AutoGenerateColumns="True" Height="440" HorizontalAlignment="Left" Margin="0,100,0,0" Name="tableAllBooks" VerticalAlignment="Top" Width="1010" />
+                </Grid>
+            </TabItem>
+        </dragablz:TabablzControl>
+    </Grid>
+
+
+</UserControl>

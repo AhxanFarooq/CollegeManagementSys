@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="CollegeSystem.Notice"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CollegeSystem"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="610" d:DesignWidth="1050">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Purple.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid HorizontalAlignment="Left" Height="610" Margin="0,0,0,0" VerticalAlignment="Top" Width="1050" Background="#F0F1F3">
+        <Grid HorizontalAlignment="Left" Height="350" Margin="20,40,0,0" VerticalAlignment="Top" Width="300" Background="#FFFFFF">
+
+            <Label Content="Create Notice" FontSize="17" Background="#042954" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="124" Height="35" />
+            <TextBox Name="txtNtcTitle" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Title" FontSize="14"  Background="#F0F1F3" Height="30" Margin="40,70,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+            </TextBox>
+            <TextBox Name="txtNtcDetail" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Detail" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+            </TextBox>
+            <TextBox Name="txtNtcPosted" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Posted By" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,210,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+            </TextBox>
+            <Label Name="lblNtcMsg"  HorizontalAlignment="Left" Margin="140,245,0,0" VerticalAlignment="Top" Height="31" Width="120"/>
+            <Button Name="btnNtcSubmit" Content="Submit" BorderThickness="0.5" HorizontalAlignment="Left" Margin="87,280,0,0"   VerticalAlignment="Top" Width="100" Background="#F8C504" Height="30" Foreground="#FFFFFF" Click="btnNtcSubmit_Click">
+
+            </Button>
+
+        </Grid>
+
+        <Grid HorizontalAlignment="Left" Height="491" Margin="350,40,0,0" VerticalAlignment="Top" Width="700" Background="#FFFFFF">
+            <ScrollViewer>
+                <StackPanel>
+                    <Label Content="Notice Board" FontStyle="Italic"  FontSize="20" Foreground="#042954" HorizontalContentAlignment="left"/>
+                    <Label HorizontalAlignment="Left" Name="lblNoticeDate1" Height="22" Width="214" Content="16/02/2019" FontSize="10" Foreground="#B5B5B5"></Label>
+                    <Label Name="lblNoticeName1" Height="26" Content="Kashif Mehmood" FontSize="12" Foreground="#613CAC" FontStyle="Oblique" FontWeight="Medium"></Label>
+                    <Label Name="lblNoticeMsg1" Height="59">
+                        <TextBlock>College management system is desktop<LineBreak/>system</TextBlock>
+                    </Label>
+                    <Label HorizontalAlignment="Left" Name="lblNoticeDate2" Height="22" Width="214" Content="16/02/2019" FontSize="10" Foreground="#B5B5B5"></Label>
+                    <Label Name="lblNoticeName2" Height="26" Content="Muhammad Ahsan Farooq" FontSize="12" Foreground="#613CAC" FontStyle="Oblique" FontWeight="Medium"></Label>
+                    <Label Name="lblNoticeMsg2" Height="59">
+                        <TextBlock>College management system is desktop<LineBreak/>system</TextBlock>
+                    </Label>
+                    <Label HorizontalAlignment="Left" Name="lblNoticeDate3" Height="22" Width="214" Content="16/02/2019" FontSize="10" Foreground="#B5B5B5"></Label>
+                    <Label Name="lblNoticeName3" Height="26" Content="Kashif Mehmood" FontSize="12" Foreground="#613CAC" FontStyle="Oblique" FontWeight="Medium"></Label>
+                    <Label Name="lblNoticeMsg3" Height="59">
+                        <TextBlock>College management system is desktop<LineBreak/>system</TextBlock>
+                    </Label>
+                    <Label HorizontalAlignment="Left" Name="lblNoticeDate4" Height="22" Width="214" Content="16/02/2019" FontSize="10" Foreground="#B5B5B5"></Label>
+                    <Label Name="lblNoticeName4" Height="26" Content="Muhammad Ahsan Farooq" FontSize="12" Foreground="#613CAC" FontStyle="Oblique" FontWeight="Medium"></Label>
+                    <Label Name="lblNoticeMsg4" Height="59">
+                        <TextBlock>College management system is desktop<LineBreak/>system</TextBlock>
+                    </Label>
+                    <Label HorizontalAlignment="Left" Name="lblNoticeDate5" Height="22" Width="214" Content="16/02/2019" FontSize="10" Foreground="#B5B5B5"></Label>
+                    <Label Name="lblNoticeName5" Height="26" Content="Kashif Mehmood" FontSize="12" Foreground="#613CAC" FontStyle="Oblique" FontWeight="Medium"></Label>
+                    <Label Name="lblNoticeMsg5" Height="59">
+                        <TextBlock>College management system is desktop<LineBreak/>system</TextBlock>
+                    </Label>
+                    <Label HorizontalAlignment="Left" Name="lblNoticeDate6" Height="22" Width="214" Content="16/02/2019" FontSize="10" Foreground="#B5B5B5"></Label>
+                    <Label Name="lblNoticeName6" Height="26" Content="Muhammad Ahsan Farooq" FontSize="12" Foreground="#613CAC" FontStyle="Oblique" FontWeight="Medium"></Label>
+                    <Label Name="lblNoticeMsg6" Height="59">
+                        <TextBlock>College management system is desktop<LineBreak/>system</TextBlock>
+                    </Label>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+    </Grid>
+
+</UserControl>

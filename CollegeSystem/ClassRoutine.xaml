@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="CollegeSystem.ClassRoutine"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CollegeSystem"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="610" d:DesignWidth="1050">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Purple.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid HorizontalAlignment="Left" Height="610" Margin="0,0,0,0" VerticalAlignment="Top" Width="1050" Background="#F0F1F3">
+
+        <Grid HorizontalAlignment="Left" Height="570" Margin="20,20,0,0" VerticalAlignment="Top" Width="300" Background="#FFFFFF">
+
+            <Label Content="Manage Class Routtine" FontSize="17" Background="#042954" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="190" Height="35" />
+            <TextBox Name="txtCrtDay" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Day" FontSize="14"  Background="#F0F1F3" Height="30" Margin="40,70,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+            </TextBox>
+            <TextBox Name="txtCrtSubject" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Subject Type" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,140,0,0"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+            </TextBox>
+            <ComboBox Name="txtCrtClass" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Class" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,210,0,0"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                <ComboBoxItem>FSC</ComboBoxItem>
+                <ComboBoxItem>FA</ComboBoxItem>
+                <ComboBoxItem>BA</ComboBoxItem>
+                <ComboBoxItem>I.COM</ComboBoxItem>
+                <ComboBoxItem>B.COM</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="txtCrtSection" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Section" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,280,0,0"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+                <ComboBoxItem>A</ComboBoxItem>
+                <ComboBoxItem>B</ComboBoxItem>
+                <ComboBoxItem>C</ComboBoxItem>
+            </ComboBox>
+
+            <TextBox Name="txtCrtTime" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Time(11:00-12:00)" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,420,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+            </TextBox>
+            <TextBox Name="txtCrtTeacher" HorizontalAlignment="Left" materialDesign:HintAssist.Hint=" Teacher" FontSize="14" BorderBrush="#042954"  Background="#F0F1F3" Height="30" Margin="40,350,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="237" BorderThickness="0,0,0,0">
+
+            </TextBox>
+            <Label Name="lblCrtMsg"  HorizontalAlignment="Left" Margin="92,450,0,0" VerticalAlignment="Top" Height="31" Width="168"/>
+            <Button Name="btnCrtSubmit" Content="Submit" BorderThickness="0.5" HorizontalAlignment="Left" Margin="40,500,0,0"   VerticalAlignment="Top" Width="100" Background="#F8C504" Height="30" Foreground="#FFFFFF" Click="btnCrtSubmit_Click">
+
+            </Button>
+            <Button Name="btnCrtReset" Content="Reset" BorderThickness="0.5" HorizontalAlignment="Left" Margin="180,500,0,0"   VerticalAlignment="Top" Width="100" Background="#042954" Height="30" Foreground="#FFFFFF" Click="btnCrtReset_Click">
+
+            </Button>
+
+        </Grid>
+
+        <Grid HorizontalAlignment="Left" Height="570" Margin="340,20,0,0" VerticalAlignment="Top" Width="690" Background="#FFFFFF">
+            <Label Content="Class Routine" FontSize="17" Background="#042954" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" Width="120" Height="35" />
+
+            <DataGrid  AutoGenerateColumns="True" Height="490" HorizontalAlignment="Left" Margin="0,80,0,0" Name="tableClassRoutine" VerticalAlignment="Top" Width="690" />
+        </Grid>
+    </Grid>
+</UserControl>

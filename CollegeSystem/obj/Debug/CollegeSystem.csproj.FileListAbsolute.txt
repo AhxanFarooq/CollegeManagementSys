@@ -1,0 +1,97 @@
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\CollegeSystem.exe.config
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\CollegeSystem.exe
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\CollegeSystem.pdb
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.csprojAssemblyReference.cache
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\MainWindow.g.cs
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\App.g.cs
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem_MarkupCompile.cache
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem_MarkupCompile.lref
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\MainWindow.baml
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.g.resources
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.Properties.Resources.resources
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.csproj.GenerateResource.cache
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.csproj.CoreCompileInputs.cache
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.exe
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.pdb
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\MaterialDesignColors.dll
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.csproj.CopyComplete
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\MaterialDesignColors.pdb
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\DashBoard.g.cs
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\DashBoard.baml
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\MetroFramework.Design.dll
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\MetroFramework.dll
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\MetroFramework.Fonts.dll
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\De.TorstenMandelkow.MetroChart.dll
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\EntityFramework.dll
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\EntityFramework.SqlServer.dll
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\EntityFramework.xml
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\EntityFramework.SqlServer.xml
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem_Content.g.cs
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\message.g.cs
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\Dragablz.dll
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\Dragablz.pdb
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\bin\Debug\Dragablz.xml
+D:\Data\6th Semester\College Management System\CollegeSystem\CollegeSystem\obj\Debug\message.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\CollegeSystem.exe.config
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\CollegeSystem.exe
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\CollegeSystem.pdb
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\De.TorstenMandelkow.MetroChart.dll
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\Dragablz.dll
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\EntityFramework.dll
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\EntityFramework.SqlServer.dll
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\MaterialDesignColors.dll
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\MetroFramework.Design.dll
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\MetroFramework.dll
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\MetroFramework.Fonts.dll
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\Dragablz.pdb
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\Dragablz.xml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\EntityFramework.xml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\EntityFramework.SqlServer.xml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\MaterialDesignColors.pdb
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Account.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\AccountSetting.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\AdministratorWindow.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Class.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\ClassRoutine.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\DashBoard.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Exam.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Hostel.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Library.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\MainWindow.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Message.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Notice.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Students.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Teacher.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\App.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem_Content.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem_MarkupCompile.cache
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem_MarkupCompile.lref
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Account.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\AccountSetting.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\AdministratorWindow.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Class.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\ClassRoutine.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\DashBoard.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Exam.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Hostel.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Library.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\MainWindow.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Message.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Notice.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Students.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\Teacher.baml
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.g.resources
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.Properties.Resources.resources
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.csproj.GenerateResource.cache
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.csproj.CoreCompileInputs.cache
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.csproj.CopyComplete
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.exe
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.pdb
+D:\Data\6th Semester\CollegeSystem\CollegeSystem\obj\Debug\CollegeSystem.csprojAssemblyReference.cache
